@@ -75,58 +75,58 @@ class ProfileEditDoubleButtons extends HookConsumerWidget {
         const SizedBox(
           width: 6,
         ),
-        SoloViewBarrier(
-          visibility: showMenu,
-          follower: Alignment.topRight,
-          target: Alignment.bottomRight,
-          items: [
-            CardItemsWidget(
-              icon: Icon(
-                MdiIcons.chatProcessing,
-                color: whiteMain.withOpacity(
-                  .8,
-                ),
-              ),
-              text: "Delete Conversation",
-              ontap: () {},
-            ),
-            CardItemsWidget(
-              icon: Icon(
-                Icons.logout,
-                color: whiteMain.withOpacity(
-                  .8,
-                ),
-              ),
-              text: "leave The Group",
-              ontap: () {},
-            ),
-            CardItemsWidget(
-              icon: Icon(
-                MdiIcons.closeBox,
-                color: whiteMain.withOpacity(
-                  .8,
-                ),
-              ),
-              text: "Delete Group",
-              ontap: () {},
-            ),
-          ],
-          onClose: () =>
-              ref.read(isShowMenuStateProvider.notifier).state = false,
-          childItem: elevatedRowButton(
-            clipTopRightAndBottomLeft: false,
-            icons: const Icon(
-              MdiIcons.dotsHorizontal,
-            ),
-            title: "More",
-            onTap: () {
-              ref.read(isShowMenuStateProvider.notifier).state = !showMenu;
-            },
-            backgroundColor: buttonColor,
-            foregroundColor: whiteMain,
-          ),
-          cardColor: Colors.amber,
-        ),
+        // SoloViewBarrier(
+        //   visibility: showMenu,
+        //   follower: Alignment.topRight,
+        //   target: Alignment.bottomRight,
+        //   items: [
+        //     CardItemsWidget(
+        //       icon: Icon(
+        //         MdiIcons.chatProcessing,
+        //         color: whiteMain.withOpacity(
+        //           .8,
+        //         ),
+        //       ),
+        //       text: "Delete Conversation",
+        //       ontap: () {},
+        //     ),
+        //     CardItemsWidget(
+        //       icon: Icon(
+        //         Icons.logout,
+        //         color: whiteMain.withOpacity(
+        //           .8,
+        //         ),
+        //       ),
+        //       text: "leave The Group",
+        //       ontap: () {},
+        //     ),
+        //     CardItemsWidget(
+        //       icon: Icon(
+        //         MdiIcons.closeBox,
+        //         color: whiteMain.withOpacity(
+        //           .8,
+        //         ),
+        //       ),
+        //       text: "Delete Group",
+        //       ontap: () {},
+        //     ),
+        //   ],
+        //   onClose: () =>
+        //       ref.read(isShowMenuStateProvider.notifier).state = false,
+        //   childItem: elevatedRowButton(
+        //     clipTopRightAndBottomLeft: false,
+        //     icons: const Icon(
+        //       MdiIcons.dotsHorizontal,
+        //     ),
+        //     title: "More",
+        //     onTap: () {
+        //       ref.read(isShowMenuStateProvider.notifier).state = !showMenu;
+        //     },
+        //     backgroundColor: buttonColor,
+        //     foregroundColor: whiteMain,
+        //   ),
+        //   cardColor: Colors.amber,
+        // ),
       ],
     );
   }
