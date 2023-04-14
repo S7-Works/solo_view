@@ -22,43 +22,41 @@ class SoloViewBarrier extends HookWidget {
   final Alignment target;
   @override
   Widget build(BuildContext context) {
-    return Portal(
-      child: Barrier(
+    return Barrier(
+      visible: visibility,
+      onClose: onClose,
+      child: ModalEntry(
         visible: visibility,
         onClose: onClose,
-        child: ModalEntry(
+        follower: follower,
+        target: target,
+        menu: Menu(
+          children: items,
+          cardColor: cardColor,
+        ),
+        child: PortalTarget(
           visible: visibility,
-          onClose: onClose,
-          follower: follower,
-          target: target,
-          menu: Menu(
-            children: items,
-            cardColor: cardColor,
+          closeDuration: kThemeAnimationDuration,
+          anchor: const Aligned(
+            target: Alignment.center,
+            follower: Alignment.center,
           ),
-          child: PortalTarget(
-            visible: visibility,
-            closeDuration: kThemeAnimationDuration,
-            anchor: const Aligned(
-              target: Alignment.center,
-              follower: Alignment.center,
-            ),
-            portalFollower: Stack(
-              children: [
-                CustomPaint(
-                  painter: HolePainter(Theme.of(context).colorScheme.secondary),
-                  child: TweenAnimationBuilder<double>(
-                    duration: kThemeAnimationDuration,
-                    curve: Curves.easeOut,
-                    tween: Tween(begin: 50, end: visibility ? 200 : 50),
-                    builder: (context, radius, _) {
-                      return childItem;
-                    },
-                  ),
-                )
-              ],
-            ),
-            child: childItem,
+          portalFollower: Stack(
+            children: [
+              CustomPaint(
+                painter: HolePainter(Theme.of(context).colorScheme.secondary),
+                child: TweenAnimationBuilder<double>(
+                  duration: kThemeAnimationDuration,
+                  curve: Curves.easeOut,
+                  tween: Tween(begin: 50, end: visibility ? 200 : 50),
+                  builder: (context, radius, _) {
+                    return childItem;
+                  },
+                ),
+              )
+            ],
           ),
+          child: childItem,
         ),
       ),
     );
