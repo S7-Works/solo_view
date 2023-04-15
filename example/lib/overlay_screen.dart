@@ -17,6 +17,13 @@ class OverlayPage extends HookConsumerWidget {
       body: Column(
         children: [
           SoloViewBarrier(
+             cardPadding: const EdgeInsets.only(
+            top: 12.0,
+            left: 12.0,
+            right: 12.0,
+            bottom: 12.0,
+          ),
+                    containerWidth: 205,
             visibility: showMenu,
             follower: Alignment.topLeft,
             target: Alignment.bottomLeft,

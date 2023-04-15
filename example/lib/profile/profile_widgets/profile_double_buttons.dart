@@ -21,6 +21,13 @@ class ProfileEditDoubleButtons extends HookConsumerWidget {
     return Row(
       children: [
         SoloViewBarrier(
+          cardPadding: const EdgeInsets.only(
+            top: 12.0,
+            left: 12.0,
+            right: 12.0,
+            bottom: 12.0,
+          ),
+                    containerWidth: 205,
           visibility: showSound,
           follower: Alignment.topLeft,
           target: Alignment.bottomLeft,
@@ -76,6 +83,13 @@ class ProfileEditDoubleButtons extends HookConsumerWidget {
           width: 6,
         ),
         SoloViewBarrier(
+          cardPadding: const EdgeInsets.only(
+            top: 12.0,
+            left: 12.0,
+            right: 12.0,
+            bottom: 12.0,
+          ),
+                    containerWidth: 205,
           visibility: showMenu,
           follower: Alignment.topRight,
           target: Alignment.bottomRight,
